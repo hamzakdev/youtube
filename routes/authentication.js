@@ -14,7 +14,7 @@ router.post('/register',asyncErrors(async(req,res,next)=>{
     const token = jwt.sign({id:user._id}, process.env.JWT_KEY)
     const options = {
         httpOnly : true,
-         sameSite:'None',
+         sameSite:'none',
         expires: new Date(Date.now() + 86400000 * 5),
     }
     res
@@ -32,7 +32,7 @@ router.post('/google',asyncErrors(async(req,res,next)=>{
     const token = jwt.sign({id:user._id}, process.env.JWT_KEY)
         const options = {
             httpOnly : true,
-           sameSite:'None',
+           sameSite:'none',
             expires: new Date(Date.now() + 86400000 * 5),
         }
         res
@@ -49,6 +49,7 @@ router.post('/google',asyncErrors(async(req,res,next)=>{
         const token = jwt.sign({id:newUser._id}, process.env.JWT_KEY)
         const options = {
             httpOnly : true,
+           sameSite:'none',
             expires: new Date(Date.now() + 86400000 * 5),
         }
         res
