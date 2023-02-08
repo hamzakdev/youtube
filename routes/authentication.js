@@ -33,6 +33,7 @@ router.post('/google',asyncErrors(async(req,res,next)=>{
         const options = {
             httpOnly : true,
            sameSite:'none',
+           secure:true,
             expires: new Date(Date.now() + 86400000 * 5),
         }
         res
@@ -50,6 +51,7 @@ router.post('/google',asyncErrors(async(req,res,next)=>{
         const options = {
             httpOnly : true,
            sameSite:'none',
+           secure:true,
             expires: new Date(Date.now() + 86400000 * 5),
         }
         res
