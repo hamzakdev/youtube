@@ -22,7 +22,7 @@ app.use(cookieParser())
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://fir-1ffa2.web.app');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type', 'Access-Control-Allow-Origin', 'Origin');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Allow-Credentials', true);
 
   if (req.method === 'OPTIONS') {
