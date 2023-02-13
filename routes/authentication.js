@@ -86,11 +86,11 @@ router.post('/login',asyncErrors(async(req,res,next)=>{
 router.get('/logout', verifyToken ,  asyncErrors(async(req,res,next)=>{
 
 
-    res.cookie('token', null, {expires:new Date(Date.now()), httpOnly:true})
+    res.cookie('token', 'none, {expires:new Date(Date.now()), httpOnly:true})
       res.json('Logged OUT')
 }))
 
 
 
 
-module.exports = router
+module.exports = router 
