@@ -4,6 +4,8 @@ const asyncErrors = require('../middlewares/asyncErrors');
 const ErrorHandler = require('../utilities/error');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const verifyToken = require('../middlewares/token')
+
 
 
 
@@ -78,6 +80,14 @@ router.post('/login',asyncErrors(async(req,res,next)=>{
     }
     res.cookie("token", token, options);
       res.json('Logged In')
+}))
+
+//LOGOUT A USER
+router.get('/logout', verifyToken ,  asyncErrors(async(req,res,next)=>{
+
+
+    res.cookie('token', null, {expires:new Date(Date.now()), httpOnly:true})
+      res.json('Logged OUT')
 }))
 
 
