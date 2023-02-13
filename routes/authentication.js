@@ -4,7 +4,7 @@ const asyncErrors = require('../middlewares/asyncErrors');
 const ErrorHandler = require('../utilities/error');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const verifyToken = require('../middlewares/token')
+
 
 
 
