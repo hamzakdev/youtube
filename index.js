@@ -43,7 +43,7 @@ connectDb().then(app.listen(5000, ()=>{
 }))
 
 app.get('/', (req,res)=>{
-    app.use(express.static(path.resolve(__dirname,'client','build')))
+    app.use(express.static(path.resol,'client','build')))
     res.sendFile(path.resolve(__dirname,'frontend','build','index.html'))
 })
 app.use('/user', userRoute)
